@@ -24,7 +24,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="22dp"
         android:backgroundTint="@android:color/background_dark"
-        android:text="@string/login"
+        android:text="@string/login2"
         android:textColor="@android:color/background_light"
         android:onClick="launchLogin"
         />
@@ -46,6 +46,7 @@
         android:hint="@string/firstname"
         android:textColorHint="@android:color/white"
        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_light"
 
         />
     <EditText
@@ -53,11 +54,11 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/first_name"
-        android:hint="@string/surnmae"
+        android:hint="@string/surname"
         android:textColorHint="@android:color/white"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10sp"
-
+        android:textColor="@android:color/background_light"
 
         />
     <EditText
@@ -68,6 +69,7 @@
         android:hint="@string/id_number"
         android:textColorHint="@android:color/white"
         android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_light"
 
         />
     <EditText
@@ -76,32 +78,36 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/ID"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:textColorHint="@android:color/white"
         android:layout_centerHorizontal="true"
-
+        android:textColor="@android:color/background_light"
         />
 
     <EditText
         android:id="@+id/confirm_password"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:layout_below="@id/password"
         android:hint="@string/confirm_password"
         android:textColorHint="@android:color/white"
         android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_light"
 
         />
+
     <Button
         android:id="@+id/reg1_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_width="100sp"
+        android:layout_height="50sp"
         android:layout_below="@id/confirm_password"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:backgroundTint="@android:color/holo_red_dark"
+        android:onClick="CreateAccount"
         android:text="@string/register"
         android:textColor="@android:color/background_light"
-        android:onClick="launchRegister"
 
         />
 
