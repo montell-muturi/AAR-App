@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DoctorsProfile</string>
+    <string name="margaretfenty">MargaretFenty</string>
+    <string name="AAR_HEALTHCARE_APP">AAR HEALTHCARE APP</string>
+    <string name="photos">Photos</string>
+    <string name="_123456">123456</string>
+    <string name="nairobi_womens_hospital">NAIROBI WOMENS HOSPITAL</string>
+    <string name="view_appointments">View Appointments</string>
+    <string name="aar_healthcare">AAR HEALTHCARE</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="m_fenty_aar_gmail_com">M.Fenty@AAR.GMAIL.COM</string>
+</resources>
