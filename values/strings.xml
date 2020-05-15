@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Appointment</string>
+    <string name="make_appointment">Please Make Your Appointment</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_name_doctor_s_name">Enter Name Doctor\'s Name</string>
+    <string name="company_logo">Company Logo</string>
+</resources>

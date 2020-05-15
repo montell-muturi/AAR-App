@@ -4,71 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".MainActivity"
-    >
+    android:layout_gravity="center"
+    android:background="@android:color/holo_red_light"
+    tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/company_logo"
-        android:layout_width="match_parent"
-        android:layout_height="398dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="-44dp"
+        android:id="@+id/companylogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:contentDescription="@string/company_logo"
-        android:src="@drawable/logo2" />
+        android:src="@drawable/logo"></ImageView>
 
-    <Button
-        android:id="@+id/reg_button"
+    <TextView
+        android:id="@+id/make_appointment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/company_logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:backgroundTint="@android:color/background_dark"
-        android:text="@string/register"
-        android:textColor="@android:color/background_light"
-        android:onClick="launchRegister"
-        />
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/reg_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:backgroundTint="@android:color/background_dark"
-        android:text="@string/login2"
-        android:textColor="@android:color/background_light"
-        android:onClick="launchLogin"
-        />
+        android:layout_below="@id/companylogo"
+        android:layout_marginTop="-5dp"
+        android:text="@string/make_appointment"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/emergency"
-        android:layout_width="110dp"
-
-        android:layout_height="200dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="500sp"
-        android:layout_marginEnd="257dp"
-        android:contentDescription="@string/emergency"
-        android:src="@drawable/emergency_red"
-        android:onClick="emergency"
-        />
 
     <EditText
-        android:id="@+id/phone_number"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_button"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="83dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:ems="10"
-        android:hint="@string/enter_hospital_number"
-        android:inputType="phone"
-        android:textColorHint="@android:color/background_light" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/make_appointment"
+        android:hint="@string/enter_your_name"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:inputType="textCapSentences"
+        ></EditText>
 
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:layout_below="@id/name"
+        android:hint="@string/enter_phone_number"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:inputType="phone"
+        ></EditText>
+
+
+    <EditText
+        android:id="@+id/doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:hint="@string/enter_name_doctor_s_name"
+        android:inputType="textCapSentences"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"></EditText>
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:layout_below="@id/phone"
+        android:hint="Set Appointment Date"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        ></EditText>
+
+    <Button
+        android:layout_width="208dp"
+        android:layout_height="81dp"
+        android:layout_below="@id/date"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:onClick="makeAppointment"
+        android:text="Make Appointment"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:backgroundTint="@android:color/background_dark"
+        ></Button>
 
 </RelativeLayout>
