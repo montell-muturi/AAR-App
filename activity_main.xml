@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@android:color/white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@android:color/holo_red_light">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="350dp"
-            android:background="@drawable/gradientbackground"
+            android:background="@android:color/holo_red_light"
             android:orientation="vertical">
 
             <TextView
@@ -45,7 +45,7 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </LinearLayout>
-    </RelativeLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="360dp"
         android:layout_height="wrap_content"
@@ -116,6 +116,7 @@
                 tools:ignore="RtlCompat" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/hospital_layout"
             android:orientation="horizontal"
             android:paddingLeft="25dp"
             android:layout_width="match_parent"
@@ -135,42 +136,64 @@
                 android:text="@string/nairobi_womens_hospital"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                tools:ignore="RtlCompat" />
+                tools:ignore="RtlCompat"/>
     </LinearLayout>
+        <LinearLayout
+            android:id="@+id/specialization_layout"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_local_hospital_black_24dp"/>
+            <TextView
+                android:id="@+id/specialization"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:paddingTop="15dp"
+                android:textColor="#000000"
+                android:text="GYNAECOLOGIST"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat"/>
+
+
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/edit"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center">
-
+        android:orientation="horizontal">
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp" >
         <Button
             android:id="@+id/edit_button"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="100sp"
             android:layout_height="wrap_content"
-            android:background="@drawable/gradientbackground"
+            android:layout_marginLeft="50dp"
+            android:textColor="#ffffff"
+            android:backgroundTint="@android:color/background_dark"
             android:text="@string/edit_profile"
             android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/appointments"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
 
         <Button
             android:id="@+id/view_appointments"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/gradientbackground"
+            android:layout_gravity="right"
+            android:layout_marginLeft="70dp"
+            android:textColor="#ffffff"
+            android:backgroundTint="@android:color/background_dark"
             android:text="@string/view_appointments"
             android:textStyle="bold" />
 
-    </LinearLayout>
-
-
+    </TableRow>
+</LinearLayout>
 </LinearLayout>
