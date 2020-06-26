@@ -1,58 +1,51 @@
-package com.nungo.doctorappointment;
+package com.wagura.doctorsprofile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.Button;
 
-import java.util.Calendar;
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
-    private EditText date;
-    private int mYear;
-    private int mMonth;
-    private int mDay;
+public class MainActivity extends AppCompatActivity {
+    private Button Appointments;
+    private Button Logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Appointments = findViewById(R.id.view_appointments);
+        Logout= findViewById(R.id.btnLogout);
 
-        date=findViewById(R.id.date);
-        date.setOnClickListener(this);
+        Appointments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAppointments();
+            }
 
+        });
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLogout();
+
+
+            }
+        });
+    }
+
+    private void openLogout() {
+        Intent intent = new Intent(this, Logout.class);
+        startActivity(intent);
 
     }
 
-    @Override
-    public void onClick(View v) {
 
-        if (v==date){
-
-            final Calendar c = Calendar.getInstance();
-            mYear=c.get(Calendar.YEAR);
-            mMonth=c.get(Calendar.MONTH);
-            mDay=c.get(Calendar.DAY_OF_MONTH);
-
-            DatePickerDialog datePickerDialog= new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                   date.setText(dayOfMonth+"-"+(month+1)+"-"+year);
-                }
-            },mYear,mMonth,mDay);
-
-            datePickerDialog.show();
-        }
-
+    public void openAppointments() {
+        Intent intent2 = new Intent(this, Appointments.class);
+        startActivity(intent2);
     }
 
-    public void makeAppointment(View view) {
-        Toast toastEnter= Toast.makeText(this,"Appointment Made Successfully",Toast.LENGTH_SHORT);
-        toastEnter.show();
-    }
+
 }
