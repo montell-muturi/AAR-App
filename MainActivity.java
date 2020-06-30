@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Button Appointments;
+    private Button EditProfile;
     private Button Logout;
 
     @Override
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Appointments = findViewById(R.id.view_appointments);
+        EditProfile=findViewById(R.id.edit_button);
         Logout= findViewById(R.id.btnLogout);
 
         Appointments.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        EditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEditProfile();
+            }
+
+        });
     }
 
     private void openLogout() {
@@ -45,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
     public void openAppointments() {
         Intent intent2 = new Intent(this, Appointments.class);
         startActivity(intent2);
+    }
+    public void openEditProfile() {
+        Intent intent3 = new Intent(this, EditProfile.class);
+        startActivity(intent3);
     }
 
 
