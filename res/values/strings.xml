@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">AAR</string>
+    <string name="company_logo">company_logo</string>
+    <string name="register2">Register</string>
+    <string name="login2">Login</string>
+    <string name="emergency">emergency</string>
+    <string name="enter_hospital_number">Enter Hospital Number</string>
+    <string name="surname">Surname</string>
+    <string name="firstname">FirstName</string>
+    <string name="id_number">Id Number</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="login3">Login</string>
+    <string name="login4">Login</string>
+    <string name="outpatient_centres">OutPatient Centres</string>
+    <string name="press_for_3_seconds_to_send_sos">PRESS for 3 seconds to send SOS</string>
+
+    <string-array name="spinner_label">
+        <item>WilliamSon House</item>
+        <item>Sarit Center</item>
+        <item>City Center</item>
+        <item>Roysambu</item>
+        <item>GreenHouse</item>
+        <item>MountainMall</item>
+        <item>Embakasi</item>
+        <item>South C</item>
+        <item>Thika</item>
+        <item>Karen_Langata</item>
+        <item>Mombasa</item>
+        <item>Kisumu</item>
+        <item>Donholm</item>
+        <item>Nakuru</item>
+        <item>Lavington</item>
+        <item>Ngong</item>
+        <item>Buruburu</item>
+        <item>Ruaka</item>
+        <item>Kitengela</item>
+        <item>Syokimau</item>
+        <item>Eldoret</item>
+
+
+
+    </string-array>
+</resources>
