@@ -41,7 +41,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 public  class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        LocationListener, GoogleMap.OnInfoWindowClickListener{
+        LocationListener{
 
     private GoogleMap mMap;
     double latitude;
@@ -131,30 +131,22 @@ public  class MapsActivity extends FragmentActivity implements OnMapReadyCallbac
         }
 
 
-       /* mMap.setOnInfoWindowClickListener(this){
+        Button call911 = (Button) findViewById(R.id.nine);
+        call911.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onInfoWindowClick(Marker marker) {
-                final String description = marker.getSnippet();
-                if (!TextUtils.isEmpty(description)) {
-                    final Spannable span = Spannable.Factory.getInstance().newSpannable(description);
-                    if (Linkify.addLinks(span, Linkify.PHONE_NUMBERS)) {
-                        final URLSpan[] old = span.getSpans(0, span.length(), URLSpan.class);
-                        if (old != null && old.length > 0) {
-                            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(old[0].getURL()));
-                            startActivity(intent);
-                        }
-                    }
-                }
-
-
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:911"));
+                startActivity(intent);
             }
-        };*/
-
+        });
 
 
         Button btnHospital = findViewById(R.id.btnHospital);
         btnHospital.setOnClickListener(new View.OnClickListener() {
             String Hospital = "hospital";
+
+
 
 
             @Override
@@ -163,15 +155,15 @@ public  class MapsActivity extends FragmentActivity implements OnMapReadyCallbac
                 mMap.addMarker(new MarkerOptions()
                         .position(aarLangata)
                         .title("AAR Healthcare Karen/Langata Outpatient Centre")
-                        .snippet("Phone: 0735963412"));
+                        .snippet("Phone: +254735963412"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(aarLangata));
                 Toast.makeText(MapsActivity.this, "Nearby Hospitals", Toast.LENGTH_LONG).show();
 
                 LatLng aarLavington = new LatLng(-1.290000, 36.770670);
                 mMap.addMarker(new MarkerOptions()
                         .position(aarLavington)
-                        .title("AAR Healthcare, Lavington Clinic")
-                        .snippet("+254780200456"));
+                        .title("AAR Healthcare, Lavington Clinic\n"+"Click To call Ambulance")
+                        .snippet("Phone: +254780200456"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(aarLavington));
                 Toast.makeText(MapsActivity.this, "Nearby Hospitals", Toast.LENGTH_LONG).show();
 
@@ -247,6 +239,22 @@ public  class MapsActivity extends FragmentActivity implements OnMapReadyCallbac
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(aarPark));
                 Toast.makeText(MapsActivity.this, "Nearby Hospitals", Toast.LENGTH_LONG).show();
 
+                mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                    @Override
+                    public void onInfoWindowClick(Marker marker) {
+                        final String description = marker.getSnippet();
+                        if (!TextUtils.isEmpty(description)) {
+                            final Spannable span = Spannable.Factory.getInstance().newSpannable(description);
+                            if (Linkify.addLinks(span, Linkify.PHONE_NUMBERS)) {
+                                final URLSpan[] old = span.getSpans(0, span.length(), URLSpan.class);
+                                if (old != null && old.length > 0) {
+                                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(old[0].getURL()));
+                                    startActivity(intent);
+                                }
+                            }
+                        }
+                    }
+                });
 
 
             }
@@ -305,13 +313,13 @@ public  class MapsActivity extends FragmentActivity implements OnMapReadyCallbac
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title("Current Position");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         mCurrLocationMarker = mMap.addMarker(markerOptions);
 
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
-        Toast.makeText(MapsActivity.this, "Your Current Location", Toast.LENGTH_LONG).show();
+        Toast.makeText(MapsActivity.this, "Your Current Location", Toast.LENGTH_SHORT).show();
 
         Log.d("onLocationChanged", String.format("latitude:%.3f longitude:%.3f", latitude, longitude));
 
@@ -395,26 +403,6 @@ public  class MapsActivity extends FragmentActivity implements OnMapReadyCallbac
             // You can add here other case statements according to your requirement.
         }
     }
-
-
-            @Override
-            public void onInfoWindowClick(Marker marker) {
-                final String description = marker.getSnippet();
-                if (!TextUtils.isEmpty(description)) {
-                    final Spannable span = Spannable.Factory.getInstance().newSpannable(description);
-                    if (Linkify.addLinks(span, Linkify.PHONE_NUMBERS)) {
-                        final URLSpan[] old = span.getSpans(0, span.length(), URLSpan.class);
-                        if (old != null && old.length > 0) {
-                            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(old[0].getURL()));
-                            startActivity(intent);
-                        }
-                    }
-                }
-
-
-
-        }
-
 
 
 
