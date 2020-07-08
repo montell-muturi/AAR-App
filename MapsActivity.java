@@ -144,7 +144,7 @@ public  class MapsActivity extends FragmentActivity implements OnMapReadyCallbac
 
         Button btnHospital = findViewById(R.id.btnHospital);
         btnHospital.setOnClickListener(new View.OnClickListener() {
-            String Hospital = "hospital";
+           
 
 
 
